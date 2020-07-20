@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "2f3821d1-bb4b-4e0b-9571-234ae258205b",
+		"name": "WeatherStation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "Default",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}",
+							"host": [
+								"{{URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/info",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Config",
+			"item": [
+				{
+					"name": "GET Config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/config",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"config"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Config",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New ESP\",\n    \"access_key\": \"\",\n    \"mq_client\": \"pep_1\",\n    \"mq_server\": \"192.168.1.106\",\n    \"mq_user\": \"eduardo_n\",\n    \"mq_pass\": \"eduardo_n\",\n    \"ssid\": \"FibertelEdu18R\",\n    \"passwd\": \"0143507310\",\n    \"ap_ssid\": \"NewESP\",\n    \"ap_passwd\": \"12345678\",\n    \"staticIp\": true,\n    \"ip\": [\n        192,\n        168,\n        1,\n        71\n    ],\n    \"gateway\": [\n        192,\n        168,\n        1,\n        1\n    ],\n    \"subnet\": [\n        255,\n        255,\n        255,\n        0\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/config",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"config"
+							]
+						},
+						"description": "Modifica la configuracion pero no queda guardada para despues de un restart"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Config",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/config",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"config"
+							]
+						},
+						"description": "Este guarda la configuracion actual en la memoria para que este cunado se reinicie"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Weather",
+			"item": [
+				{
+					"name": "GET Weather",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/weather",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"weather"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Weather",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"altitude\": 26\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/weather",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"weather"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
